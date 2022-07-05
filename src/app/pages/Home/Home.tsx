@@ -1,7 +1,6 @@
 import React from "react";
+import { ContainerHome } from "./styled";
 
-const Home = () => {
-  return <div>index</div>;
+export const Home = () => {
+  return <ContainerHome>Home</ContainerHome>;
 };
-
-export default Home;

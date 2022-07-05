@@ -1,7 +1,6 @@
 import React from "react";
+import { ContainerBlog } from "./styled";
 
-const Blog = () => {
-  return <div>Blog</div>;
+export const Blog = () => {
+  return <ContainerBlog>Blog</ContainerBlog>;
 };
-
-export default Blog;
