@@ -1,12 +1,10 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
-  body {
-    box-sizing: border-box;
-    margin: 0;
-    a{
-      text-decoration: none;
-      color: #1d1d1d;
-    } 
+body, div, span, h1, h2, h3, h4, h5, h6, p, a, img, footer, header, nav, section
+{  
+    margin: 0;  
+    padding: 0;  
+    border: 0;  
 }
 `;
