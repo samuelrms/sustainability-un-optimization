@@ -1,6 +1,10 @@
 import React from "react";
 import { ContainerDefault } from "./styled";
 
-export const Container = () => {
-  return <ContainerDefault></ContainerDefault>;
+interface InterfaceContainerProps {
+  children?: React.ReactNode;
+}
+
+export const Container: React.FC<InterfaceContainerProps> = ({ children }) => {
+  return <ContainerDefault>{children}</ContainerDefault>;
 };

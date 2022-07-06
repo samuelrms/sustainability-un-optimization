@@ -11,7 +11,7 @@ export const AppRoutes = () => {
   return (
     <Container>
       <Content>
-        <Channel path="/home" element={<Home />} />
+        <Channel path="/" element={<Home />} />
         <Channel path="/login" element={<Login />} />
         <Channel path="/blog" element={<Blog />} />
         <Channel path="/404-not-found" element={<Error />} />
