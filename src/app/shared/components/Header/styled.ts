@@ -1,3 +1,3 @@
 import styled from "styled-components";
 
-export const ContainerHeader = styled;
+export const ContainerHeader = styled.header``;

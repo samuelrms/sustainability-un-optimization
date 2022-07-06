@@ -1,6 +1,10 @@
 import React from "react";
 import { ButtonDefault } from "./styled";
 
-export const Button = () => {
-  return <ButtonDefault>Button</ButtonDefault>;
+interface InterfaceButtonProps {
+  children?: React.ReactNode;
+}
+
+export const Button: React.FC<InterfaceButtonProps> = ({ children }) => {
+  return <ButtonDefault>{children}</ButtonDefault>;
 };
