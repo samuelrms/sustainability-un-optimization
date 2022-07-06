@@ -7,8 +7,10 @@ export const ContainerError = styled(Container)`
   height: 100vh;
   display: flex;
   text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   h1 {
-    margin: auto;
     color: #fff;
     background: #e35;
     border-radius: 5px;

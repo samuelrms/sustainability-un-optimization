@@ -2,9 +2,14 @@ import React from "react";
 import { ButtonDefault } from "./styled";
 
 interface InterfaceButtonProps {
-  children?: React.ReactNode;
+  type?: "button" | "submit" | "reset" | undefined;
+  onClick: () => void;
+  children: React.ReactNode;
 }
 
-export const Button: React.FC<InterfaceButtonProps> = ({ children }) => {
-  return <ButtonDefault>{children}</ButtonDefault>;
+export const Button: React.FC<InterfaceButtonProps> = ({
+  children,
+  onClick,
+}) => {
+  return <ButtonDefault onClick={onClick}>{children}</ButtonDefault>;
 };
