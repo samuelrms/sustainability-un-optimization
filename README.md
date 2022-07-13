@@ -2,7 +2,7 @@
 
 ## Desafio final do curso de desenvolvedor front-end, proposta de replicação da ONU Objetivos de Desenvolvimento Sustentável e Blog pessoal integrado.
 
-## Projeto em fase de estruturação
+## Projeto em fase de estruturação e criação de ideias
 
 <details>
 
