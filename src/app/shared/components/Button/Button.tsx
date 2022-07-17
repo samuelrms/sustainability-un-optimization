@@ -3,7 +3,7 @@ import { ButtonDefault } from "./styled";
 
 interface InterfaceButtonProps {
   type?: "button" | "submit" | "reset" | undefined;
-  onClick: () => void;
+  onClick?: () => void;
   children: React.ReactNode;
 }
 
