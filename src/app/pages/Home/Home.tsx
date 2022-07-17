@@ -1,6 +1,10 @@
-import React from "react";
+import { Loading } from "../../shared";
 import { ContainerHome } from "./styled";
 
 export const Home = () => {
-  return <ContainerHome>Home</ContainerHome>;
+  return (
+    <ContainerHome>
+      <Loading />
+    </ContainerHome>
+  );
 };
