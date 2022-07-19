@@ -1,5 +1,11 @@
-import React from "react";
+import { ContainerHeader } from "./styled";
+import logoHeaderNav from "../../assets/svg/logoHeader.svg";
+import { Svgs } from "../Svgs/Svgs";
 
 export const Header = () => {
-  return <div>Header</div>;
+  return (
+    <ContainerHeader>
+      <Svgs src={logoHeaderNav} alt="Simbolo da ONU" />
+    </ContainerHeader>
+  );
 };

@@ -6,10 +6,12 @@ import {
   Route as Channel,
 } from "react-router-dom";
 import { Blog, Error, Home, Login } from "../pages";
+import { Header } from "../shared";
 
 export const AppRoutes = () => {
   return (
     <Container>
+      <Header />
       <Content>
         <Channel path="/" element={<Home />} />
         <Channel path="/login" element={<Login />} />

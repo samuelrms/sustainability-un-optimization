@@ -1,1 +1,1 @@
-export * from './textCards/index';
+export {};
