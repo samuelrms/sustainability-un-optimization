@@ -7,4 +7,7 @@ body, div, span, h1, h2, h3, h4, h5, h6, p, a, img, footer, header, nav, section
     padding: 0;  
     border: 0;  
 }
+body{
+    padding: 0 40px;
+}
 `;
