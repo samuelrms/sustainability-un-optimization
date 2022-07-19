@@ -1,19 +1,26 @@
-import { useState } from "react";
-import { ContainerTheme } from "./styled";
+import { useContext, useEffect } from "react";
+import { ContainerTheme, IconThemes } from "./styled";
 import { iconThemeDark, iconThemeLight } from "../../assets";
-import { Svgs } from "../../components";
+import { ThemeContext } from "../../context/GlobalContext";
 
 export const Theme = () => {
-  const [isTheme, setIsTheme] = useState<boolean>(true);
+  const { toggle } = useContext(ThemeContext);
+  const { setToggle } = useContext(ThemeContext);
+  const { handleToggle } = useContext(ThemeContext);
 
-  const handleAnimation = () => {
-    setIsTheme(!isTheme);
-  };
+  // useEffect(() => {
+  //   handleClick();
+  // }, [setToggle]);
+
+  // const handleClick = () => {
+  //   setToggle(!toggle);
+  // };
+  console.log(toggle, "esse aqui");
 
   return (
-    <ContainerTheme onClick={handleAnimation}>
-      {isTheme && <Svgs src={iconThemeDark} alt="Theme dark" />}
-      {!isTheme && <Svgs src={iconThemeLight} alt="Theme light" />}
+    <ContainerTheme onClick={handleToggle}>
+      {toggle && <IconThemes src={iconThemeDark} alt="Theme dark" />}
+      {!toggle && <IconThemes src={iconThemeLight} alt="Theme light" />}
     </ContainerTheme>
   );
 };
