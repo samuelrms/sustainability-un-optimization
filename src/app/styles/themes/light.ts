@@ -1,4 +1,5 @@
 import {
+  borderBottomLight,
   eighthCard,
   fifthCard,
   firstCard,
@@ -6,6 +7,8 @@ import {
   lightBackground,
   lightSecondaryBackground,
   ninthCard,
+  searchFocusLight,
+  searchLight,
   secondCard,
   seventhCard,
   sixthCard,
@@ -13,6 +16,7 @@ import {
   textCard,
   textLight,
   thirdCard,
+  unLocalization,
 } from "./variableColors";
 
 export const lightTheme = {
@@ -20,6 +24,12 @@ export const lightTheme = {
   colors: {
     primary: lightBackground,
     secondary: lightSecondaryBackground,
+    borderBottomTab: borderBottomLight,
+    unLocalization: unLocalization,
+    text: textLight,
+    textCard: textCard,
+    search: searchLight,
+    searchFocus: searchFocusLight,
     cards: {
       firstCard: firstCard,
       secondCard: secondCard,
@@ -32,7 +42,5 @@ export const lightTheme = {
       ninthCard: ninthCard,
       tenthCard: tenthCard,
     },
-    text: textLight,
-    textCard: textCard,
   },
 };

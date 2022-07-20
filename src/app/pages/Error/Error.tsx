@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Button } from "../../shared/components";
-import { ContainerError } from "./styled";
+import { ButtonError, ContainerError } from "./styled";
 
 export const Error = () => {
   const navigation = useNavigate();
@@ -16,7 +15,7 @@ export const Error = () => {
         Acreditamos que você esteja no local errado , por gentileza clique no
         botão abaixo para retornar para pagina inicial
       </h1>
-      <Button onClick={handleClick}>Retornar a pagina inicial</Button>
+      <ButtonError onClick={handleClick}>Retornar a pagina inicial</ButtonError>
     </ContainerError>
   );
 };

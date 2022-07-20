@@ -5,6 +5,7 @@ export interface ISgv {
   width?: number;
   alt: string;
   height?: number;
+  fill?: string;
 }
 
 export interface IToggleThemeContext {

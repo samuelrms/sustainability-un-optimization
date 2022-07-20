@@ -1,4 +1,5 @@
 import {
+  borderBottomDark,
   darkBackground,
   darkSecondaryBackground,
   eighthCardDark,
@@ -6,6 +7,8 @@ import {
   firstCardDark,
   fourthCardDark,
   ninthCardDark,
+  searchDark,
+  searchFocusDark,
   secondCardDark,
   seventhCardDark,
   sixthCardDark,
@@ -13,6 +16,7 @@ import {
   textCardDark,
   textDark,
   thirdCardDark,
+  unLocalizationDark,
 } from "./variableColors";
 
 export const darkTheme = {
@@ -20,6 +24,12 @@ export const darkTheme = {
   colors: {
     primary: darkBackground,
     secondary: darkSecondaryBackground,
+    borderBottomTab: borderBottomDark,
+    unLocalization: unLocalizationDark,
+    text: textDark,
+    textCard: textCardDark,
+    search: searchDark,
+    searchFocus: searchFocusDark,
     cards: {
       firstCard: firstCardDark,
       secondCard: secondCardDark,
@@ -32,7 +42,5 @@ export const darkTheme = {
       ninthCard: ninthCardDark,
       tenthCard: tenthCardDark,
     },
-    text: textDark,
-    textCard: textCardDark,
   },
 };

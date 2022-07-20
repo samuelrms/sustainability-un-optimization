@@ -1,25 +1,49 @@
+import { useContext } from "react";
 import {
   ContainerHeader,
+  ContentBottomHeader,
   ContentLinksToHome,
   ContentNavigationHome,
+  ContentSearch,
   ContentThemeAndLanguage,
+  ContentTitleAndDescription,
   ContentTopHeader,
-  IconTheme,
+  Description,
+  HomeNavigationLink,
   LinkHome,
   LinkLanguage,
+  Search,
+  SearchButton,
+  SubTitle,
+  TitleUnLocalization,
+  UnLocalizationAndSearch,
 } from "./styled";
-import { logoHeaderSvg, houseIconSvg } from "../../assets";
+import {
+  logoHeaderSvg,
+  houseIconSvg,
+  houseIconDarkSvg,
+  unDotsIcon,
+  searchIconLight,
+  searchIconDark,
+} from "../../assets";
 import { Svgs } from "../Svgs/Svgs";
 import { Link } from "react-router-dom";
 import { Theme } from "../../animation";
+import { ThemeContext } from "../../context/GlobalContext";
 
 export const Header = () => {
+  const { toggle } = useContext(ThemeContext);
   return (
     <ContainerHeader>
       <ContentTopHeader>
         <ContentLinksToHome>
           <Link to="/">
-            <Svgs width={30} height={30} src={houseIconSvg} alt="Home" />
+            {!toggle && (
+              <Svgs width={30} height={30} src={houseIconSvg} alt="Home" />
+            )}
+            {toggle && (
+              <Svgs width={30} height={30} src={houseIconDarkSvg} alt="Home" />
+            )}
           </Link>
           <LinkHome to="/">Bem-vindo aos Bairros Unidos de Uberlândia</LinkHome>
         </ContentLinksToHome>
@@ -28,11 +52,37 @@ export const Header = () => {
           <LinkLanguage to="/">Português</LinkLanguage>
         </ContentThemeAndLanguage>
       </ContentTopHeader>
-      <ContentNavigationHome>
-        <Link to="/">
-          <Svgs src={logoHeaderSvg} alt="Simbolo da ONU" />
-        </Link>
-      </ContentNavigationHome>
+      <ContentBottomHeader>
+        <ContentNavigationHome>
+          <HomeNavigationLink to="/">
+            <Svgs
+              width={100}
+              height={100}
+              src={logoHeaderSvg}
+              alt="Simbolo da ONU"
+            />
+          </HomeNavigationLink>
+          <ContentTitleAndDescription>
+            <SubTitle to="/">BAIRROS UNIDOS</SubTitle>
+            <Description to="/">UBERLÂNDIA</Description>
+            <Svgs width={90} height={3} src={unDotsIcon} alt="Simbolo da ONU" />
+          </ContentTitleAndDescription>
+        </ContentNavigationHome>
+        <UnLocalizationAndSearch>
+          <TitleUnLocalization>
+            Bairros Unidos <strong>Uberlândia</strong>
+          </TitleUnLocalization>
+          <ContentSearch>
+            <Search placeholder="Busca" />
+            <SearchButton>
+              {toggle && <Svgs src={searchIconDark} alt="search icon dark" />}
+              {!toggle && (
+                <Svgs src={searchIconLight} alt="search icon light" />
+              )}
+            </SearchButton>
+          </ContentSearch>
+        </UnLocalizationAndSearch>
+      </ContentBottomHeader>
     </ContainerHeader>
   );
 };

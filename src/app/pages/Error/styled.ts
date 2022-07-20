@@ -17,3 +17,5 @@ export const ContainerError = styled(Container)`
     padding: 5px;
   }
 `;
+
+export const ButtonError = styled.button``;
