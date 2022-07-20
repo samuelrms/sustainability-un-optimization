@@ -13,7 +13,6 @@ export interface IToggleThemeContext {
 
 export interface IGlobalThemeContext {
   toggle?: boolean;
-  setToggle?: any;
   setIsTheme?: () => void;
   handleToggle?: () => void;
 }

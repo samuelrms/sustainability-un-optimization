@@ -17,7 +17,6 @@ export const ToggleThemeContext = ({ children }: IToggleThemeContext) => {
 
   const themeContextToggle: IGlobalThemeContext = {
     toggle: toggle,
-    setToggle: setToggle,
     handleToggle: handleToggle,
   };
 
