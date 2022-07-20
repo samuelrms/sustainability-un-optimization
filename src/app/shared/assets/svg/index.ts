@@ -6,6 +6,8 @@ import themeLight from "../svg/svgs/themeLight.svg";
 import unDots from "../svg/svgs/un-dots.svg";
 import searchIcon from "../svg/svgs/searchLight.svg";
 import searchDarkIcon from "../svg/svgs/searchDark.svg";
+import logoChat from "../svg/svgs/logoChat.svg";
+import well from "../svg/svgs/whell.svg";
 
 export const logoHeaderSvg = logoHeader;
 export const houseIconSvg = houseIcon;
@@ -15,3 +17,5 @@ export const iconThemeLight = themeLight;
 export const unDotsIcon = unDots;
 export const searchIconLight = searchIcon;
 export const searchIconDark = searchDarkIcon;
+export const logoIconChat = logoChat;
+export const wellIcon = well;

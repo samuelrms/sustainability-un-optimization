@@ -15,6 +15,8 @@ import {
   tenthCardDark,
   textCardDark,
   textDark,
+  textDarkSecondary,
+  textGrayDark,
   thirdCardDark,
   unLocalizationDark,
 } from "./variableColors";
@@ -27,6 +29,8 @@ export const darkTheme = {
     borderBottomTab: borderBottomDark,
     unLocalization: unLocalizationDark,
     text: textDark,
+    textSecondary: textDarkSecondary,
+    textGray: textGrayDark,
     textCard: textCardDark,
     search: searchDark,
     searchFocus: searchFocusDark,

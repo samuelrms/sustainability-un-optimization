@@ -9,6 +9,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
 }
 body{
+    overflow-x: hidden;
     background: ${({ theme }) => theme.colors.primary};
     }
 `;

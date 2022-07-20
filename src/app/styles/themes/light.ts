@@ -14,7 +14,9 @@ import {
   sixthCard,
   tenthCard,
   textCard,
+  textGrayLight,
   textLight,
+  textLightSecondary,
   thirdCard,
   unLocalization,
 } from "./variableColors";
@@ -27,6 +29,8 @@ export const lightTheme = {
     borderBottomTab: borderBottomLight,
     unLocalization: unLocalization,
     text: textLight,
+    textSecondary: textLightSecondary,
+    textGray: textGrayLight,
     textCard: textCard,
     search: searchLight,
     searchFocus: searchFocusLight,

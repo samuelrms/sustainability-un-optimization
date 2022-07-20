@@ -6,6 +6,8 @@ export const ContainerHeader = styled.header`
   position: fixed;
   width: -webkit-fill-available;
   border-bottom: 1px solid ${({ theme }) => theme.colors.secondary};
+  z-index: 99;
+  background-color: ${({ theme }) => theme.colors.primary};
 `;
 
 export const ContentTopHeader = styled.div`
@@ -106,7 +108,6 @@ export const Search = styled.input`
   color: ${({ theme }) => theme.colors.text};
   padding: 10px 60px 10px 20px;
   width: 100%;
-  z-index: 0;
 
   :focus {
     outline: 0;

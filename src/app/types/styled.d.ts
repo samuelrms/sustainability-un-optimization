@@ -9,6 +9,8 @@ declare module "styled-components" {
       borderBottomTab: string;
       unLocalization: string;
       text: string;
+      textSecondary: string;
+      textGray: string;
       textCard: string;
       search: string;
       searchFocus: string;

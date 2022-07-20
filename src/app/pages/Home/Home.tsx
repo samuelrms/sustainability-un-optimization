@@ -1,6 +1,33 @@
 // import { Loading } from "../../shared";
-import { ContainerHome } from "./styled";
+import {
+  AboutHome,
+  BodyHome,
+  ContainerHome,
+  ContentBodyHome,
+  HeaderHome,
+  LinkHome,
+  TextContent,
+} from "./styled";
 
 export const Home = () => {
-  return <ContainerHome>{/* <Loading /> */}</ContainerHome>;
+  return (
+    <ContainerHome>
+      <HeaderHome>
+        <LinkHome to="/">Início</LinkHome>
+        <AboutHome>/</AboutHome>
+        <AboutHome>
+          Sobre o nosso trabalho para alcançar os Objetivos de Desenvolvimento
+          Sustentável em Uberlândia
+        </AboutHome>
+      </HeaderHome>
+      <BodyHome>
+        <ContentBodyHome>
+          <TextContent>
+            Sobre o nosso trabalho para alcançar os Objetivos de Desenvolvimento
+            Sustentável no Brasil
+          </TextContent>
+        </ContentBodyHome>
+      </BodyHome>
+    </ContainerHome>
+  );
 };
