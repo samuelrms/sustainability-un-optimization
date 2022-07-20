@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import { Container } from "../../shared/components";
 
-export const ContainerError = styled(Container)`
+export const ContainerError = styled.div`
   background: #000;
   width: 100vw;
   height: 100vh;
