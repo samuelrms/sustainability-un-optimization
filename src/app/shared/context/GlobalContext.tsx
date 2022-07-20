@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import {
   IGlobalThemeContext,
   IToggleThemeContext,
@@ -10,10 +10,6 @@ export const ThemeContext = createContext<IGlobalThemeContext>(
 
 export const ToggleThemeContext = ({ children }: IToggleThemeContext) => {
   const [toggle, setToggle] = useState<boolean>();
-
-  useEffect(() => {
-    handleToggle();
-  }, []);
 
   const handleToggle = () => {
     setToggle(!toggle);
