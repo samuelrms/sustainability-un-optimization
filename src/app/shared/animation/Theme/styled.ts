@@ -12,7 +12,7 @@ export const ContainerTheme = styled.button`
 export const IconThemes = styled.img`
   width: 40px;
   height: 40px;
-  animation: renderTheme 0.5s ease;
+  animation: renderTheme 0.2s ease;
   @keyframes renderTheme {
     from {
       opacity: 0;

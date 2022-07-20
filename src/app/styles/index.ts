@@ -1,2 +1,3 @@
 export * from "./Global/GlobalStyles";
-export * from "./themes/themes";
+export * from "./themes/dark";
+export * from "./themes/light";

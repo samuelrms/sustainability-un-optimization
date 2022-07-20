@@ -1,6 +1,7 @@
 export const primalColor = "#f6f6f6";
 
 export const lightBackground = "#fff";
+export const lightSecondaryBackground = "#f6f6f6";
 export const firstCard = "#e5243b";
 export const secondCard = "#dda63a";
 export const thirdCard = "#4c9f38";
@@ -15,6 +16,7 @@ export const textCard = "#fff";
 export const textLight = "#1d1d1d";
 
 export const darkBackground = "#1d1d1d";
+export const darkSecondaryBackground = "#333333";
 export const firstCardDark = "#00F535";
 export const secondCardDark = "#0061F5";
 export const thirdCardDark = "#F500C1";
