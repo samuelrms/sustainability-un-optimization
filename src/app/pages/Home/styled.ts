@@ -64,4 +64,5 @@ export const TextHow = styled.h2`
 export const DescriptionHow = styled.p`
   color: ${({ theme }) => theme.colors.text};
   font-size: 1.2rem;
+  text-align: justify;
 `;

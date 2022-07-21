@@ -21,6 +21,7 @@ export const ContentCard = styled.div<ICardStyle>`
   align-items: center;
   margin-bottom: 30px;
   border-radius: 10px;
+  cursor: pointer;
 `;
 
 export const TextContentCard = styled.h2`
