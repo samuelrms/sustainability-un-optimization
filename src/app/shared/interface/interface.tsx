@@ -1,4 +1,5 @@
 import React from "react";
+import { TContentCardObjectives } from "../../types";
 
 export interface ISgv {
   src: string;
@@ -16,4 +17,17 @@ export interface IGlobalThemeContext {
   toggle?: boolean;
   setIsTheme?: () => void;
   handleToggle?: () => void;
+}
+
+export type ICardsState = {
+  title: string;
+  content: TContentCardObjectives;
+  idToBackground: string;
+  id: number;
+  image: string;
+  objective: string;
+};
+
+export interface ICardStyle {
+  index?: number;
 }

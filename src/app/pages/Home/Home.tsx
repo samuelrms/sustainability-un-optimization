@@ -1,4 +1,5 @@
 // import { Loading } from "../../shared";
+import { Cards } from "./../../shared/components/Cards/Cards";
 import {
   AboutHome,
   BodyHome,
@@ -27,6 +28,7 @@ export const Home = () => {
             Sustentável no Brasil
           </TextContent>
         </ContentBodyHome>
+        <Cards />
       </BodyHome>
     </ContainerHome>
   );
