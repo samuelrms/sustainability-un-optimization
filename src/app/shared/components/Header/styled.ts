@@ -77,11 +77,13 @@ export const SubTitle = styled(Link)`
   color: ${({ theme }) => theme.colors.unLocalization};
   text-decoration: none;
   margin: 0 16px 8px 0;
+  font-weight: bold;
 `;
 
 export const Description = styled(SubTitle)`
   font-size: 10px;
   margin-right: 0;
+  font-weight: normal;
 `;
 
 export const UnLocalizationAndSearch = styled.div`

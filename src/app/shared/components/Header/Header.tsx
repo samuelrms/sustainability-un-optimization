@@ -30,6 +30,7 @@ import { Svgs } from "../Svgs/Svgs";
 import { Link } from "react-router-dom";
 import { Theme } from "../../animation";
 import { ThemeContext } from "../../context/GlobalContext";
+import { textHeader } from "../../mocks";
 
 export const Header = () => {
   const { toggle } = useContext(ThemeContext);
@@ -45,11 +46,11 @@ export const Header = () => {
               <Svgs width={30} height={30} src={houseIconDarkSvg} alt="Home" />
             )}
           </Link>
-          <LinkHome to="/">Bem-vindo aos Bairros Unidos de Uberlândia</LinkHome>
+          <LinkHome to="/">{textHeader.linkHome}</LinkHome>
         </ContentLinksToHome>
         <ContentThemeAndLanguage>
           <Theme />
-          <LinkLanguage to="/">Português</LinkLanguage>
+          <LinkLanguage to="/">{textHeader.linkLanguage}</LinkLanguage>
         </ContentThemeAndLanguage>
       </ContentTopHeader>
       <ContentBottomHeader>
@@ -63,14 +64,15 @@ export const Header = () => {
             />
           </HomeNavigationLink>
           <ContentTitleAndDescription>
-            <SubTitle to="/">BAIRROS UNIDOS</SubTitle>
-            <Description to="/">UBERLÂNDIA</Description>
+            <SubTitle to="/">{textHeader.subTitle}</SubTitle>
+            <Description to="/">{textHeader.description}</Description>
             <Svgs width={90} height={3} src={unDotsIcon} alt="Simbolo da ONU" />
           </ContentTitleAndDescription>
         </ContentNavigationHome>
         <UnLocalizationAndSearch>
           <TitleUnLocalization>
-            Bairros Unidos <strong>Uberlândia</strong>
+            {textHeader.titleUnLocalization.normal}
+            <strong>{textHeader.titleUnLocalization.bold}</strong>
           </TitleUnLocalization>
           <ContentSearch>
             <Search placeholder="Busca" />

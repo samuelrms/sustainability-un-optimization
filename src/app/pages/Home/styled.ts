@@ -46,3 +46,22 @@ export const TextContent = styled.h1`
   margin: auto 0;
   width: 60%;
 `;
+
+export const HowBody = styled.div`
+  width: 70%;
+`;
+
+export const HowContent = styled.div`
+  padding: 0 30px 60px;
+`;
+
+export const TextHow = styled.h2`
+  padding-bottom: 30px;
+  font-size: 2.2rem;
+  color: ${({ theme }) => theme.colors.text};
+`;
+
+export const DescriptionHow = styled.p`
+  color: ${({ theme }) => theme.colors.text};
+  font-size: 1.2rem;
+`;
