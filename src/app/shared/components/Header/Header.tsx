@@ -4,7 +4,6 @@ import {
   ContentBottomHeader,
   ContentLinksToHome,
   ContentNavigationHome,
-  ContentSearch,
   ContentThemeAndLanguage,
   ContentTitleAndDescription,
   ContentTopHeader,
@@ -12,8 +11,6 @@ import {
   HomeNavigationLink,
   LinkHome,
   LinkLanguage,
-  Search,
-  SearchButton,
   SubTitle,
   TitleUnLocalization,
   UnLocalizationAndSearch,
@@ -23,17 +20,17 @@ import {
   houseIconSvg,
   houseIconDarkSvg,
   unDotsIcon,
-  searchIconLight,
-  searchIconDark,
 } from "../../assets";
 import { Svgs } from "../Svgs/Svgs";
 import { Link } from "react-router-dom";
 import { Theme } from "../../animation";
-import { ThemeContext } from "../../context/GlobalContext";
+import { ValueGlobalContext } from "../../context/GlobalContext";
 import { textHeader } from "../../mocks";
+import { Search } from "../Search/Search";
 
 export const Header = () => {
-  const { toggle } = useContext(ThemeContext);
+  const { toggle } = useContext(ValueGlobalContext);
+
   return (
     <ContainerHeader>
       <ContentTopHeader>
@@ -74,15 +71,7 @@ export const Header = () => {
             {textHeader.titleUnLocalization.normal}
             <strong>{textHeader.titleUnLocalization.bold}</strong>
           </TitleUnLocalization>
-          <ContentSearch>
-            <Search placeholder="Busca" />
-            <SearchButton>
-              {toggle && <Svgs src={searchIconDark} alt="search icon dark" />}
-              {!toggle && (
-                <Svgs src={searchIconLight} alt="search icon light" />
-              )}
-            </SearchButton>
-          </ContentSearch>
+          <Search />
         </UnLocalizationAndSearch>
       </ContentBottomHeader>
     </ContainerHeader>

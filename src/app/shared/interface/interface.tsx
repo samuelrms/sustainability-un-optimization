@@ -9,14 +9,16 @@ export interface ISgv {
   fill?: string;
 }
 
-export interface IToggleThemeContext {
+export interface IGlobalContext {
   children?: React.ReactNode;
 }
 
-export interface IGlobalThemeContext {
+export interface IGlobalContextProps {
   toggle?: boolean;
   setIsTheme?: () => void;
   handleToggle?: () => void;
+  response?: ICardsState[];
+  loading?: boolean;
 }
 
 export type ICardsState = {

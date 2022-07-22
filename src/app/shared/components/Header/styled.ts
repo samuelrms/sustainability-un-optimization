@@ -103,35 +103,3 @@ export const TitleUnLocalization = styled.p`
     margin-top: 4px;
   }
 `;
-
-export const Search = styled.input`
-  background: transparent;
-  border-radius: 20px;
-  border: 3px solid ${({ theme }) => theme.colors.search};
-  color: ${({ theme }) => theme.colors.text};
-  padding: 10px 60px 10px 20px;
-  width: 100%;
-
-  :focus {
-    outline: 0;
-    border-color: ${({ theme }) => theme.colors.searchFocus};
-  }
-`;
-
-export const SearchButton = styled.button`
-  border-radius: 0 20px 20px 0;
-  border-left: none;
-  padding: 0 10px;
-  cursor: pointer;
-  background: transparent;
-  position: absolute;
-  right: 0;
-  top: 6px;
-  display: flex;
-`;
-
-export const ContentSearch = styled.div`
-  width: 35%;
-  display: flex;
-  position: relative;
-`;

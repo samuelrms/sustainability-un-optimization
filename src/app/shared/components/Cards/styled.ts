@@ -12,9 +12,9 @@ export const ContainerCard = styled.div`
 `;
 
 export const ContentCard = styled.div<ICardStyle>`
-  width: calc(100% / 5 - 30px);
+  width: calc(100% / 5 - 10px);
   background: ${({ theme, index }: any) => theme.colors.cards[index]};
-  padding: 25px;
+  padding: 25px 40px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -24,18 +24,21 @@ export const ContentCard = styled.div<ICardStyle>`
   cursor: pointer;
 `;
 
+export const ContentText = styled.div`
+  display: flex;
+  height: 50%;
+  margin-bottom: 20px;
+`;
+
 export const TextContentCard = styled.h2`
   color: ${({ theme }) => theme.colors.textCard};
   margin-bottom: 20px;
-  display: flex;
-  flex-direction: row;
   font-size: 1.5rem;
-  align-items: flex-start;
-  align-content: flex-start;
-  height: calc(100% / 2 - 10px);
+  width: 80%;
 `;
 
 export const NumberContentCard = styled(TextContentCard)`
   font-size: 2rem;
-  margin: 0 10px 0 0;
+  margin-right: 5px;
+  width: 20%;
 `;

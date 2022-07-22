@@ -1,13 +1,14 @@
 import { useContext, useEffect, useState } from "react";
 import { url } from "../../../services";
 import { Loading } from "../../animation";
-import { ThemeContext } from "../../context/GlobalContext";
+import { ValueGlobalContext } from "../../context/GlobalContext";
 import { ICardsState } from "../../interface/interface";
 import { Svgs } from "../Svgs/Svgs";
 import { useNavigate } from "react-router-dom";
 import {
   ContainerCard,
   ContentCard,
+  ContentText,
   NumberContentCard,
   TextContentCard,
 } from "./styled";
@@ -15,7 +16,7 @@ import {
 export const Cards = () => {
   const [response, setResponse] = useState<ICardsState[]>();
   const [loading, setLoading] = useState<boolean>();
-  const { toggle } = useContext(ThemeContext);
+  const { toggle } = useContext(ValueGlobalContext);
   const navigation = useNavigate();
 
   useEffect(() => {
@@ -54,10 +55,10 @@ export const Cards = () => {
                 index={index}
                 key={index}
               >
-                <TextContentCard>
+                <ContentText>
                   <NumberContentCard>{data?.id}</NumberContentCard>
-                  {data?.title}
-                </TextContentCard>
+                  <TextContentCard>{data?.title}</TextContentCard>
+                </ContentText>
                 {!toggle && (
                   <Svgs
                     width={100}

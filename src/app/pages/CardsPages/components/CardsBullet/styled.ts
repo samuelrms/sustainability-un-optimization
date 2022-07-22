@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ICardStyle } from "../../../shared";
+import { ICardStyle } from "../../../../shared";
 
 export const ContainerCard = styled.div`
   width: 100%;
@@ -10,7 +10,7 @@ export const ContainerCard = styled.div`
   position: fixed;
   left: 10px;
   top: 174px;
-  z-index: 99;
+  z-index: 80;
   padding: 5px 0;
   background: ${({ theme }) => theme.colors.primary};
 `;

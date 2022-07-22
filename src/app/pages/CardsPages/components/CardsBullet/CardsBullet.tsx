@@ -1,14 +1,19 @@
 import { useContext, useEffect, useState } from "react";
-import { url } from "../../../services";
+import { url } from "../../../../services";
 
 import { useNavigate } from "react-router-dom";
+import {
+  ICardsState,
+  Loading,
+  Svgs,
+  ValueGlobalContext,
+} from "../../../../shared";
 import { ContainerCard, ContentCard } from "./styled";
-import { ICardsState, Loading, Svgs, ThemeContext } from "../../../shared";
 
-export const Cards = () => {
+export const CardsBullet = () => {
   const [response, setResponse] = useState<ICardsState[]>();
   const [loading, setLoading] = useState<boolean>();
-  const { toggle } = useContext(ThemeContext);
+  const { toggle } = useContext(ValueGlobalContext);
   const navigation = useNavigate();
 
   useEffect(() => {

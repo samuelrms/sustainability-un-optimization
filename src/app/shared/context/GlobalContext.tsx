@@ -1,28 +1,53 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import { url } from "../../services";
 import {
-  IGlobalThemeContext,
-  IToggleThemeContext,
+  IGlobalContextProps,
+  IGlobalContext,
+  ICardsState,
 } from "../interface/interface";
 
-export const ThemeContext = createContext<IGlobalThemeContext>(
-  {} as IGlobalThemeContext,
+export const ValueGlobalContext = createContext<IGlobalContextProps>(
+  {} as IGlobalContextProps,
 );
 
-export const ToggleThemeContext = ({ children }: IToggleThemeContext) => {
+export const GlobalContext = ({ children }: IGlobalContext) => {
   const [toggle, setToggle] = useState<boolean>();
+  const [response, setResponse] = useState<ICardsState[]>();
+  const [loading, setLoading] = useState<boolean>();
+
+  useEffect(() => {
+    getCard();
+  }, [loading]);
+
+  const getCard = async () => {
+    try {
+      const { data } = await url.get("/cards");
+      const { cards } = data;
+      if (Boolean(cards)) {
+        setResponse(cards);
+        setLoading(true);
+      } else {
+        setLoading(false);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   const handleToggle = () => {
     setToggle(!toggle);
   };
 
-  const themeContextToggle: IGlobalThemeContext = {
+  const themeContextToggleAndState: IGlobalContextProps = {
     toggle: toggle,
     handleToggle: handleToggle,
+    response: response,
+    loading: loading,
   };
 
   return (
-    <ThemeContext.Provider value={themeContextToggle}>
+    <ValueGlobalContext.Provider value={themeContextToggleAndState}>
       {children}
-    </ThemeContext.Provider>
+    </ValueGlobalContext.Provider>
   );
 };

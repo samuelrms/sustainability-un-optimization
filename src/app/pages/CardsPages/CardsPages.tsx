@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { useLocation } from "react-router-dom";
-import { Svgs, ThemeContext } from "../../shared";
-import { Cards } from "./components/Cards";
+import { Svgs, ValueGlobalContext } from "../../shared";
+import { CardsBullet, InfoCards } from "./components";
 import {
   ContainerCard,
   ContentCard,
@@ -15,7 +15,7 @@ import {
 export const CardsPages = () => {
   const location = useLocation();
   const { card }: any = location.state;
-  const { toggle } = useContext(ThemeContext);
+  const { toggle } = useContext(ValueGlobalContext);
 
   return (
     <ContainerCard>
@@ -30,22 +30,23 @@ export const CardsPages = () => {
         </ContentText>
         {!toggle && (
           <Svgs
-            width={100}
-            height={100}
+            width={250}
+            height={250}
             src={card?.imageLight}
             alt={card?.title}
           />
         )}
         {toggle && (
           <Svgs
-            width={100}
-            height={100}
+            width={250}
+            height={250}
             src={card?.imageDark}
             alt={card?.title}
           />
         )}
       </ContentCard>
-      <Cards />
+      <CardsBullet />
+      <InfoCards />
     </ContainerCard>
   );
 };

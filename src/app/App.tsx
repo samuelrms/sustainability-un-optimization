@@ -1,10 +1,10 @@
-import { ToggleThemeContext } from "./shared";
+import { GlobalContext } from "./shared";
 import { AssemblyApp } from "./AssemblyApp/AssemblyApp";
 
 export const App = () => {
   return (
-    <ToggleThemeContext>
+    <GlobalContext>
       <AssemblyApp />
-    </ToggleThemeContext>
+    </GlobalContext>
   );
 };

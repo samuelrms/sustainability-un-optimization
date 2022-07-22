@@ -23,7 +23,9 @@ export const ContentCard = styled.div<ICardStyle>`
   margin: 80px 0 70px;
 `;
 
-export const ContentText = styled.div``;
+export const ContentText = styled.div`
+  width: 50%;
+`;
 
 export const DescriptionCardTitle = styled.h2`
   color: ${({ theme }) => theme.colors.textCard};
@@ -40,10 +42,10 @@ export const TextContentCard = styled(DescriptionCardTitle)`
 
 export const NumberContentCard = styled(DescriptionCardTitle)`
   font-size: 5rem;
-  margin: 0 10px 0 0;
+  margin-bottom: 15px;
 `;
 
 export const ObjectiveContentCard = styled.p`
   color: ${({ theme }) => theme.colors.textCard};
-  width: 70%;
+  text-align: justify;
 `;
