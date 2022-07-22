@@ -5,6 +5,7 @@ export const ContainerHeader = styled.header`
   padding: 10px 0 0;
   position: fixed;
   width: -webkit-fill-available;
+  margin-bottom: 30px;
   border-bottom: 1px solid ${({ theme }) => theme.colors.secondary};
   z-index: 99;
   background-color: ${({ theme }) => theme.colors.primary};

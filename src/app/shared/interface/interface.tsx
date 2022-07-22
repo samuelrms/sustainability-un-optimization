@@ -24,7 +24,8 @@ export type ICardsState = {
   content: TContentCardObjectives;
   idToBackground: string;
   id: number;
-  image: string;
+  imageDark: string;
+  imageLight: string;
   objective: string;
 };
 

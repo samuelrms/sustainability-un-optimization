@@ -1,16 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import { url } from "../../../services";
-import { Loading } from "../../animation";
-import { ThemeContext } from "../../context/GlobalContext";
-import { ICardsState } from "../../interface/interface";
-import { Svgs } from "../Svgs/Svgs";
+
 import { useNavigate } from "react-router-dom";
-import {
-  ContainerCard,
-  ContentCard,
-  NumberContentCard,
-  TextContentCard,
-} from "./styled";
+import { ContainerCard, ContentCard } from "./styled";
+import { ICardsState, Loading, Svgs, ThemeContext } from "../../../shared";
 
 export const Cards = () => {
   const [response, setResponse] = useState<ICardsState[]>();
@@ -54,22 +47,18 @@ export const Cards = () => {
                 index={index}
                 key={index}
               >
-                <TextContentCard>
-                  <NumberContentCard>{data?.id}</NumberContentCard>
-                  {data?.title}
-                </TextContentCard>
                 {!toggle && (
                   <Svgs
-                    width={100}
-                    height={100}
+                    width={20}
+                    height={20}
                     src={data?.imageLight}
                     alt={data?.title}
                   />
                 )}
                 {toggle && (
                   <Svgs
-                    width={100}
-                    height={100}
+                    width={20}
+                    height={20}
                     src={data?.imageDark}
                     alt={data?.title}
                   />
