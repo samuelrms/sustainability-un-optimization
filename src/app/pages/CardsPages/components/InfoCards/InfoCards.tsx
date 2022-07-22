@@ -10,8 +10,6 @@ export const InfoCards = () => {
   const location = useLocation();
   const { card }: any = location.state;
 
-  console.log(card);
-
   return (
     <InfoCardsContainer>
       <ContentInfoCards>
