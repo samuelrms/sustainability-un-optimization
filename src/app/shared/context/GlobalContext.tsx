@@ -41,8 +41,6 @@ export const GlobalContext = ({ children }: IGlobalContext) => {
       const { data } = await url.get(`/comments/card_${idCard}`);
       if (Boolean(data)) {
         setGetCommentsState(data);
-      } else {
-        console.log("Erro");
       }
     } catch (err) {
       console.log(err);
@@ -51,7 +49,7 @@ export const GlobalContext = ({ children }: IGlobalContext) => {
 
   const postComment = async (IDCard: number) => {
     try {
-      const data = await url
+      await url
         .post(`/comments/card_${IDCard}`, {
           comment: postCommentsState,
           name: "teste",
@@ -62,8 +60,6 @@ export const GlobalContext = ({ children }: IGlobalContext) => {
         .catch(function (error: any) {
           console.log(error);
         });
-
-      console.log(data);
     } catch (err) {
       console.log(err);
     }

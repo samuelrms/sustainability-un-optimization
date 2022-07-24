@@ -5,14 +5,54 @@ export const ContainerComments = styled.div`
   background: ${({ theme }) => theme.colors.secondary};
   color: ${({ theme }) => theme.colors.text};
   border-radius: 10px;
+  height: 1100px;
 `;
 
-export const CommentsContent = styled.ul``;
+export const TitleContent = styled.h2`
+  padding: 10px 10px 15px;
+`;
+
+export const CommentsContent = styled.ul`
+  overflow-y: auto;
+  height: 100%;
+`;
 
 export const Comment = styled.div`
   background: ${({ theme }) => theme.colors.tertiary};
-  margin: 5px;
+  margin: 15px 5px;
   border-radius: 10px;
   padding: 5px;
   list-style: none;
+`;
+
+export const DataComment = styled.li`
+  text-align: justify;
+  padding: 10px 20px;
+`;
+
+export const DataCommentName = styled(DataComment)`
+  color: ${({ theme }) => theme.colors.textSecondary};
+  text-align: right;
+`;
+
+export const ContentTextAndSubmit = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+`;
+
+export const CommentText = styled.input`
+  width: 100%;
+  border: 1px solid black;
+  margin: 5px;
+  border-radius: 10px;
+  padding: 10px;
+  background: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.text};
+`;
+
+export const Submit = styled.button`
+  background: ${({ theme }) => theme.colors.secondary};
+  cursor: pointer;
 `;

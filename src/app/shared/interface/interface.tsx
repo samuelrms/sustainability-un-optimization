@@ -22,7 +22,7 @@ export interface IGlobalContextProps {
   getCommentsState?: any;
   postComment?: any;
   setPostCommentsState?: any;
-  postCommentsState?: string;
+  postCommentsState: any;
 }
 
 export type ICardsState = {

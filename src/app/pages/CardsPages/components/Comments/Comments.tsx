@@ -1,7 +1,22 @@
-import { useLocation } from "react-router-dom";
 import { useContext, useEffect } from "react";
-import { ValueGlobalContext } from "../../../../shared";
-import { Comment, CommentsContent, ContainerComments } from "./styled";
+import { useLocation } from "react-router-dom";
+import {
+  sendDarkIcon,
+  sendLightIcon,
+  Svgs,
+  ValueGlobalContext,
+} from "../../../../shared";
+import {
+  Comment,
+  CommentsContent,
+  ContainerComments,
+  CommentText,
+  Submit,
+  ContentTextAndSubmit,
+  TitleContent,
+  DataComment,
+  DataCommentName,
+} from "./styled";
 
 export const Comments = () => {
   const location = useLocation();
@@ -13,49 +28,61 @@ export const Comments = () => {
     postComment,
     setPostCommentsState,
     postCommentsState,
+    toggle,
   } = useContext(ValueGlobalContext);
 
   useEffect(() => {
     getComment(id);
-  }, [id, getComment]);
+  }, [getComment, id]);
 
-  const handleClick = () => {
-    postComment(id);
+  const conditionToComment = () => {
+    if (postCommentsState?.trim().length) {
+      postComment(id);
+      setPostCommentsState("");
+    }
   };
 
   const changeComments = (e: any) => {
     setPostCommentsState(e.target.value);
   };
 
-  const keyPostComments = (e: any) => {
-    e.key === "Enter" && postComment(id);
+  const handleClick = () => {
+    conditionToComment();
   };
 
-  const clearInput = (e: any) => {
-    changeComments(e);
-    keyPostComments(e);
-    setPostCommentsState([...setPostCommentsState]);
+  const handleKeyDownListCards = (e: any) => {
+    if (e.key === "Enter") {
+      conditionToComment();
+    }
   };
 
   return (
     <ContainerComments>
+      <TitleContent>
+        Conte-nos se você acredita que iremos conseguir
+      </TitleContent>
+      <ContentTextAndSubmit>
+        <CommentText
+          type="text"
+          value={postCommentsState}
+          onChange={(e) => changeComments(e)}
+          onKeyDown={(e) => handleKeyDownListCards(e)}
+        />
+        <Submit onClick={handleClick}>
+          {!toggle && <Svgs src={sendLightIcon} alt="Submit" />}
+          {toggle && <Svgs src={sendDarkIcon} alt="Submit" />}
+        </Submit>
+      </ContentTextAndSubmit>
       <CommentsContent>
         {getCommentsState?.map((data: any) => {
           return (
-            <Comment key={data.id}>
-              <li>{data.comment}</li>
-              <li>{data.name}</li>
+            <Comment key={data?.id}>
+              <DataComment>{data?.comment}</DataComment>
+              {data?.name && <DataCommentName>{data?.name}</DataCommentName>}
             </Comment>
           );
         })}
       </CommentsContent>
-      <input
-        type="text"
-        value={postCommentsState}
-        onChange={(e) => clearInput(e)}
-        onKeyDown={(e) => clearInput(e)}
-      />
-      <button onClick={handleClick}>env</button>
     </ContainerComments>
   );
 };
