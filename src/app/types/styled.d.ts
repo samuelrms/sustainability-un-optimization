@@ -7,6 +7,7 @@ declare module "styled-components" {
       primary: string;
       secondary: string;
       tertiary: string;
+      footer: string;
       borderBottomTab: string;
       unLocalization: string;
       text: string;

@@ -6,7 +6,7 @@ import {
   Route as Channel,
 } from "react-router-dom";
 import { Blog, CardsPages, Error, Home, Login } from "../pages";
-import { Header } from "../shared";
+import { Footer, Header } from "../shared";
 import { Container } from "./styled";
 
 export const AppRoutes = () => {
@@ -22,6 +22,7 @@ export const AppRoutes = () => {
           <Channel path="/404-not-found" element={<Error />} />
           <Channel path="*" element={<Redirect to="/404-not-found" />} />
         </Content>
+        <Footer />
       </Container>
     </BrowserRouter>
   );

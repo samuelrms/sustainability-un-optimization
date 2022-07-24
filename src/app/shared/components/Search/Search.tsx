@@ -1,7 +1,8 @@
-import { useContext, useMemo, useState } from "react";
+import { useContext, useMemo, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { searchIconDark, searchIconLight } from "../../assets";
 import { ValueGlobalContext } from "../../context/GlobalContext";
+import { useOnClickOutside } from "../../hooks";
 import { Svgs } from "../Svgs/Svgs";
 import {
   ContainerSearch,
@@ -13,6 +14,7 @@ import {
 
 export const Search = () => {
   const [search, setSearch] = useState<any>();
+  const [searchDropdown, setSearchDropdown] = useState<boolean>(false);
   const { toggle, response } = useContext(ValueGlobalContext);
   const navigation = useNavigate();
 
@@ -28,6 +30,10 @@ export const Search = () => {
     setSearch("");
   };
 
+  const searchRef = useRef(null);
+
+  useOnClickOutside(searchRef, () => setSearchDropdown(!searchDropdown));
+
   return (
     <ContainerSearch>
       <SearchInput
@@ -35,15 +41,20 @@ export const Search = () => {
         type="text"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
+        onClick={() => setSearchDropdown(!searchDropdown)}
       />
       <SearchButton>
         {toggle && <Svgs src={searchIconDark} alt="search icon dark" />}
         {!toggle && <Svgs src={searchIconLight} alt="search icon light" />}
       </SearchButton>
-      {Boolean(search?.trim()) && (
+      {searchDropdown && (
         <ContentSearch>
           {filterResponse?.map((data, index) => (
-            <ListSearch onClick={() => handleClickNavigation(data)} key={index}>
+            <ListSearch
+              ref={searchRef}
+              onClick={() => handleClickNavigation(data)}
+              key={index}
+            >
               {data.title}
             </ListSearch>
           ))}

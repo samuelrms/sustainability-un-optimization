@@ -1,4 +1,6 @@
 export const primalColor = "#f6f6f6";
+export const footerLight = "#f9f9f9";
+export const footerDark = "#1A1A1A";
 
 // Light
 export const lightBackground = "#fff";

@@ -52,7 +52,7 @@ export const GlobalContext = ({ children }: IGlobalContext) => {
       await url
         .post(`/comments/card_${IDCard}`, {
           comment: postCommentsState,
-          name: "teste",
+          // name: "teste",
         })
         .then(function (response: any) {
           console.log(response);
