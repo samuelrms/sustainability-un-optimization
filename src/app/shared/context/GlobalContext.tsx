@@ -14,6 +14,8 @@ export const GlobalContext = ({ children }: IGlobalContext) => {
   const [toggle, setToggle] = useState<boolean>();
   const [response, setResponse] = useState<ICardsState[]>();
   const [loading, setLoading] = useState<boolean>();
+  const [getCommentsState, setGetCommentsState] = useState<any>();
+  const [postCommentsState, setPostCommentsState] = useState<string>();
 
   useEffect(() => {
     getCard();
@@ -34,6 +36,39 @@ export const GlobalContext = ({ children }: IGlobalContext) => {
     }
   };
 
+  const getComment = async (idCard: number) => {
+    try {
+      const { data } = await url.get(`/comments/card_${idCard}`);
+      if (Boolean(data)) {
+        setGetCommentsState(data);
+      } else {
+        console.log("Erro");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const postComment = async (IDCard: number) => {
+    try {
+      const data = await url
+        .post(`/comments/card_${IDCard}`, {
+          comment: postCommentsState,
+          name: "teste",
+        })
+        .then(function (response: any) {
+          console.log(response);
+        })
+        .catch(function (error: any) {
+          console.log(error);
+        });
+
+      console.log(data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   const handleToggle = () => {
     setToggle(!toggle);
   };
@@ -43,6 +78,11 @@ export const GlobalContext = ({ children }: IGlobalContext) => {
     handleToggle: handleToggle,
     response: response,
     loading: loading,
+    getComment: getComment,
+    getCommentsState: getCommentsState,
+    setPostCommentsState: setPostCommentsState,
+    postComment: postComment,
+    postCommentsState: postCommentsState,
   };
 
   return (

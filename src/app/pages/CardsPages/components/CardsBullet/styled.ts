@@ -2,16 +2,16 @@ import styled from "styled-components";
 import { ICardStyle } from "../../../../shared";
 
 export const ContainerCard = styled.div`
+  max-width: 1440px;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-content: space-between;
-  position: fixed;
-  left: 10px;
+  position: sticky;
   top: 174px;
   z-index: 80;
-  padding: 5px 0;
+  padding: 8px 0 5px;
   background: ${({ theme }) => theme.colors.primary};
 `;
 

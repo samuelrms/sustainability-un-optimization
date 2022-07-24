@@ -6,13 +6,20 @@ export const ContainerCard = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  align-content: space-between;
+  align-content: flex-start;
   padding: 180px 70px 40px;
 `;
 
-export const ContentCard = styled.div<ICardStyle>`
+export const WrapCards = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+export const ContentCard = styled.div`
   width: 70%;
+`;
+
+export const Card = styled.div<ICardStyle>`
   height: 400px;
   background: ${({ theme, index }: any) => theme.colors.cards[index]};
   padding: 50px 50px 50px 30px;
@@ -20,7 +27,7 @@ export const ContentCard = styled.div<ICardStyle>`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 80px 0 70px;
+  margin: 0 10px 70px 0;
 `;
 
 export const ContentText = styled.div`

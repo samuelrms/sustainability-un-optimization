@@ -17,7 +17,7 @@ export const Search = () => {
   const navigation = useNavigate();
 
   const filterResponse = useMemo(() => {
-    const lowerSearch = search?.toLocaleLowerCase().trim();
+    const lowerSearch = search?.toLocaleLowerCase().replace(/\s/g, "");
     return response?.filter((data) =>
       data?.title?.toLocaleLowerCase()?.includes(lowerSearch),
     );

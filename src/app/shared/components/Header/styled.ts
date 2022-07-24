@@ -2,10 +2,11 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const ContainerHeader = styled.header`
+  max-width: 1440px;
+  margin: 0 auto 30px;
   padding: 10px 0 0;
   position: fixed;
   width: -webkit-fill-available;
-  margin-bottom: 30px;
   border-bottom: 1px solid ${({ theme }) => theme.colors.secondary};
   z-index: 99;
   background-color: ${({ theme }) => theme.colors.primary};

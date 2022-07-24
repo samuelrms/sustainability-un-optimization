@@ -1,5 +1,4 @@
 import React from "react";
-import { TContentCardObjectives } from "../../types";
 
 export interface ISgv {
   src: string;
@@ -19,11 +18,15 @@ export interface IGlobalContextProps {
   handleToggle?: () => void;
   response?: ICardsState[];
   loading?: boolean;
+  getComment?: any;
+  getCommentsState?: any;
+  postComment?: any;
+  setPostCommentsState?: any;
+  postCommentsState?: string;
 }
 
 export type ICardsState = {
   title: string;
-  content: TContentCardObjectives;
   idToBackground: string;
   id: number;
   imageDark: string;
@@ -33,4 +36,16 @@ export type ICardsState = {
 
 export interface ICardStyle {
   index?: number;
+}
+
+export interface ILocationState {
+  card: {
+    content: Array<string>;
+    id: number;
+    idToBackground: string;
+    imageDark: string;
+    imageLight: string;
+    objective: string;
+    title: string;
+  };
 }

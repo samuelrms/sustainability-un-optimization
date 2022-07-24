@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const InfoCardsContainer = styled.div``;
 
 export const ContentInfoCards = styled.div`
-  width: 70%;
+  margin-right: 20px;
 `;
 
 export const TitleContentCards = styled.h2`

@@ -21,6 +21,7 @@ export const textCard = "#fff";
 export const textLight = "#1d1d1d";
 export const textLightSecondary = "#009EDB";
 export const textGrayLight = "#82827F";
+export const tertiary = "#F5F4DC";
 
 // Dark
 export const darkBackground = "#1d1d1d";
@@ -43,3 +44,4 @@ export const textCardDark = "#1d1d1d";
 export const textDark = "#fff";
 export const textDarkSecondary = "#E89538";
 export const textGrayDark = "#807F82";
+export const tertiaryDark = "#808080";

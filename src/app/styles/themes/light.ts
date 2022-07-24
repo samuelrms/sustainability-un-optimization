@@ -13,6 +13,7 @@ import {
   seventhCard,
   sixthCard,
   tenthCard,
+  tertiary,
   textCard,
   textGrayLight,
   textLight,
@@ -26,6 +27,7 @@ export const lightTheme = {
   colors: {
     primary: lightBackground,
     secondary: lightSecondaryBackground,
+    tertiary: tertiary,
     borderBottomTab: borderBottomLight,
     unLocalization: unLocalization,
     text: textLight,

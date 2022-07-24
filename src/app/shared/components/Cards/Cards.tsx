@@ -1,8 +1,6 @@
-import { useContext, useEffect, useState } from "react";
-import { url } from "../../../services";
+import { useContext } from "react";
 import { Loading } from "../../animation";
 import { ValueGlobalContext } from "../../context/GlobalContext";
-import { ICardsState } from "../../interface/interface";
 import { Svgs } from "../Svgs/Svgs";
 import { useNavigate } from "react-router-dom";
 import {
@@ -14,32 +12,11 @@ import {
 } from "./styled";
 
 export const Cards = () => {
-  const [response, setResponse] = useState<ICardsState[]>();
-  const [loading, setLoading] = useState<boolean>();
-  const { toggle } = useContext(ValueGlobalContext);
+  const { toggle, response, loading } = useContext(ValueGlobalContext);
   const navigation = useNavigate();
 
-  useEffect(() => {
-    getCard();
-  }, [loading]);
-
-  const getCard = async () => {
-    try {
-      const { data } = await url.get("/cards");
-      const { cards } = data;
-      if (Boolean(cards)) {
-        setResponse(cards);
-        setLoading(true);
-      } else {
-        setLoading(false);
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
   const handleClick = (card: any) => {
-    navigation(`/cards/${card.id}`, { state: { card } });
+    navigation(`/cards/${card?.id}`, { state: { card } });
   };
 
   return (

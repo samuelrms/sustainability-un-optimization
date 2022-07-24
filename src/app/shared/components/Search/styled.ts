@@ -8,7 +8,7 @@ export const ContainerSearch = styled.div`
 
 export const SearchInput = styled.input`
   background: transparent;
-  border-radius: 20px;
+  border-radius: 10px;
   border: 3px solid ${({ theme }) => theme.colors.search};
   color: ${({ theme }) => theme.colors.text};
   padding: 10px 60px 10px 20px;
@@ -17,6 +17,7 @@ export const SearchInput = styled.input`
   :focus {
     outline: 0;
     border-color: ${({ theme }) => theme.colors.searchFocus};
+    border-radius: 0;
   }
 `;
 
@@ -32,7 +33,7 @@ export const SearchButton = styled.button`
 `;
 
 export const ContentSearch = styled.ul`
-  top: 60px;
+  top: 51px;
   position: absolute;
   list-style: none;
   background: ${({ theme }) => theme.colors.textSecondary};

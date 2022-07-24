@@ -12,5 +12,7 @@ body{
     overflow-x: hidden;
     background: ${({ theme }) => theme.colors.primary};
     font-family: sans-serif;
+    display: flex;
+    justify-content: center;
     }
 `;

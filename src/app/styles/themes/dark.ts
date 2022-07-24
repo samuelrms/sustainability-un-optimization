@@ -13,6 +13,7 @@ import {
   seventhCardDark,
   sixthCardDark,
   tenthCardDark,
+  tertiaryDark,
   textCardDark,
   textDark,
   textDarkSecondary,
@@ -26,6 +27,7 @@ export const darkTheme = {
   colors: {
     primary: darkBackground,
     secondary: darkSecondaryBackground,
+    tertiary: tertiaryDark,
     borderBottomTab: borderBottomDark,
     unLocalization: unLocalizationDark,
     text: textDark,
