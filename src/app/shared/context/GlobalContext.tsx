@@ -1,10 +1,6 @@
 import { createContext, useEffect, useState } from "react";
-import { url } from "../../services";
-import {
-  IGlobalContextProps,
-  IGlobalContext,
-  ICardsState,
-} from "../interface/interface";
+import { getCard, getComment, postComment } from "../../services";
+import { IGlobalContextProps, IGlobalContext, ICardsState } from "../interface";
 
 export const ValueGlobalContext = createContext<IGlobalContextProps>(
   {} as IGlobalContextProps,
@@ -14,71 +10,36 @@ export const GlobalContext = ({ children }: IGlobalContext) => {
   const [toggle, setToggle] = useState<boolean>();
   const [response, setResponse] = useState<ICardsState[]>();
   const [loading, setLoading] = useState<boolean>();
-  const [getCommentsState, setGetCommentsState] = useState<any>();
+  const [getCommentsState, setGetCommentsState] = useState<string[]>();
   const [postCommentsState, setPostCommentsState] = useState<string>();
+  const [userName, setUserName] = useState<string>();
+  const [isName, setIsName] = useState<boolean>(false);
 
   useEffect(() => {
-    getCard();
+    getCard(setResponse, setLoading);
   }, [loading]);
 
-  const getCard = async () => {
-    try {
-      const { data } = await url.get("/cards");
-      const { cards } = data;
-      if (Boolean(cards)) {
-        setResponse(cards);
-        setLoading(true);
-      } else {
-        setLoading(false);
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  const getComment = async (idCard: number) => {
-    try {
-      const { data } = await url.get(`/comments/card_${idCard}`);
-      if (Boolean(data)) {
-        setGetCommentsState(data);
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  const postComment = async (IDCard: number) => {
-    try {
-      await url
-        .post(`/comments/card_${IDCard}`, {
-          comment: postCommentsState,
-          // name: "teste",
-        })
-        .then(function (response: any) {
-          console.log(response);
-        })
-        .catch(function (error: any) {
-          console.log(error);
-        });
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  const handleToggle = () => {
+  const handleToggleTheme = () => {
     setToggle(!toggle);
   };
 
   const themeContextToggleAndState: IGlobalContextProps = {
-    toggle: toggle,
-    handleToggle: handleToggle,
+    getComment: (id: number) => getComment(id, setGetCommentsState),
+    postComment: (id: number) => postComment(id, postCommentsState, userName),
+    handleToggleTheme: handleToggleTheme,
+    postCommentsState: postCommentsState,
     response: response,
     loading: loading,
-    getComment: getComment,
+    toggle: toggle,
+    userName: userName,
+    isName: isName,
+
+    // Falta colocar type
+    setIsName: setIsName,
+    setUserName: setUserName,
     getCommentsState: getCommentsState,
+    setGetCommentsState: setGetCommentsState,
     setPostCommentsState: setPostCommentsState,
-    postComment: postComment,
-    postCommentsState: postCommentsState,
   };
 
   return (

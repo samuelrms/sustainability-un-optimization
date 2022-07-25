@@ -6,6 +6,7 @@ import {
   Svgs,
   ValueGlobalContext,
 } from "../../../../shared";
+import { UserName } from "../UserName/UserName";
 import {
   Comment,
   CommentsContent,
@@ -29,6 +30,9 @@ export const Comments = () => {
     setPostCommentsState,
     postCommentsState,
     toggle,
+    isName,
+    setIsName,
+    userName,
   } = useContext(ValueGlobalContext);
 
   useEffect(() => {
@@ -56,10 +60,17 @@ export const Comments = () => {
     }
   };
 
+  const teste = () => {
+    if (!userName?.trim()?.length) {
+      setIsName(!isName);
+    }
+  };
+
   return (
     <ContainerComments>
       <TitleContent>
-        Conte-nos se você acredita que iremos conseguir
+        Conte-nos se você acredita que iremos conseguir, se não acredita
+        descreva o motivo por gentileza.
       </TitleContent>
       <ContentTextAndSubmit>
         <CommentText
@@ -67,7 +78,9 @@ export const Comments = () => {
           value={postCommentsState}
           onChange={(e) => changeComments(e)}
           onKeyDown={(e) => handleKeyDownListCards(e)}
+          onClick={teste}
         />
+        <UserName />
         <Submit onClick={handleClick}>
           {!toggle && <Svgs src={sendLightIcon} alt="Submit" />}
           {toggle && <Svgs src={sendDarkIcon} alt="Submit" />}

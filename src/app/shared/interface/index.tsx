@@ -13,22 +13,26 @@ export interface IGlobalContext {
 }
 
 export interface IGlobalContextProps {
-  toggle?: boolean;
-  setIsTheme?: () => void;
-  handleToggle?: () => void;
+  getComment: (id: number) => void;
+  postComment: (id: number) => void;
+  handleToggleTheme: () => void;
   response?: ICardsState[];
+  toggle?: boolean;
   loading?: boolean;
-  getComment?: any;
-  getCommentsState?: any;
-  postComment?: any;
-  setPostCommentsState?: any;
-  postCommentsState: any;
+  getCommentsState?: string[];
+  postCommentsState?: string;
+  userName?: string;
+  isName?: boolean;
+  setIsName: any;
+  setGetCommentsState: any;
+  setPostCommentsState: any;
+  setUserName?: any;
 }
 
 export type ICardsState = {
+  id: number;
   title: string;
   idToBackground: string;
-  id: number;
   imageDark: string;
   imageLight: string;
   objective: string;

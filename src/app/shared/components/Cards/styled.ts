@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ICardStyle } from "./../../interface/interface";
+import { ICardStyle } from "../../interface";
 
 export const ContainerCard = styled.div`
   width: 100%;
