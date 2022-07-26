@@ -18,7 +18,7 @@ export const CardsBullet = () => {
         <Loading />
       ) : (
         <>
-          {response?.map((data, index: number) => {
+          {response?.map((data, index) => {
             return (
               <ContentCard
                 onClick={() => handleClick(data)}

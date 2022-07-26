@@ -21,12 +21,16 @@ export interface IGlobalContextProps {
   loading?: boolean;
   getCommentsState?: string[];
   postCommentsState?: string;
-  userName?: string;
+  userName: string;
   isName?: boolean;
-  setIsName: any;
-  setGetCommentsState: any;
-  setPostCommentsState: any;
-  setUserName?: any;
+  setIsName: React.Dispatch<React.SetStateAction<boolean>>;
+  setGetCommentsState: React.Dispatch<
+    React.SetStateAction<string[] | undefined>
+  >;
+  setPostCommentsState: React.Dispatch<
+    React.SetStateAction<string | undefined>
+  >;
+  setUserName: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export type ICardsState = {
@@ -39,7 +43,7 @@ export type ICardsState = {
 };
 
 export interface ICardStyle {
-  index?: number;
+  index: number;
 }
 
 export interface ILocationState {

@@ -1,4 +1,4 @@
-import { useContext, useRef } from "react";
+import { KeyboardEvent, useContext, useRef } from "react";
 import {
   sendDarkIcon,
   sendLightIcon,
@@ -19,9 +19,21 @@ export const UserName = () => {
   const { userName, setUserName, isName, setIsName, toggle } =
     useContext(ValueGlobalContext);
 
-  const isNameRef = useRef(null);
+  const isNameRef = useRef<HTMLDivElement>(null);
 
-  useOnClickOutside(isNameRef, () => setIsName(!isName));
+  useOnClickOutside<HTMLDivElement>(isNameRef, () => setIsName(!isName));
+
+  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      setIsName(!isName);
+      setUserName(userName);
+    }
+  };
+
+  const handleClick = () => {
+    setIsName(!isName);
+    setUserName(userName);
+  };
 
   return isName ? (
     <ContainerUserName ref={isNameRef}>
@@ -32,16 +44,12 @@ export const UserName = () => {
 
       <ContentGetName>
         <GetNameUser
-          type="text"
-          value={userName}
           onChange={(e) => setUserName(e.target.value)}
-          onKeyDown={(e) =>
-            e.key === "Enter" && setIsName(!isName) && setUserName(userName)
-          }
+          onKeyDown={handleKeyDown}
+          value={userName}
+          type="text"
         />
-        <ValidatorName
-          onClick={() => setIsName(!isName) && setUserName(userName)}
-        >
+        <ValidatorName onClick={handleClick}>
           {!toggle && <Svgs src={sendLightIcon} alt="Submit" />}
           {toggle && <Svgs src={sendDarkIcon} alt="Submit" />}
         </ValidatorName>

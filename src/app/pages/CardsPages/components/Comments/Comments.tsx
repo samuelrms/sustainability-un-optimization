@@ -61,9 +61,7 @@ export const Comments = () => {
   };
 
   const teste = () => {
-    if (!userName?.trim()?.length) {
-      setIsName(!isName);
-    }
+    Boolean(!userName?.length) && setIsName(!isName);
   };
 
   return (
