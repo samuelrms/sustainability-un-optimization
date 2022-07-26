@@ -1,7 +1,8 @@
+import { ICardsState } from "../../shared";
 import { url } from "../api";
 
 export const getCard = async (
-  setResponse: (props?: any) => void,
+  setResponse: (props?: ICardsState[]) => void,
   setLoading: (props?: boolean) => void,
 ) => {
   try {

@@ -25,8 +25,7 @@ export const UserName = () => {
 
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
-      setIsName(!isName);
-      setUserName(userName);
+      handleClick();
     }
   };
 
@@ -39,7 +38,8 @@ export const UserName = () => {
     <ContainerUserName ref={isNameRef}>
       <Close onClick={() => setIsName(!isName)}>X</Close>
       <TitleName>
-        Por gentileza precisamos saber seu nome para poder comentar
+        Por gentileza, nos informe seu nome e sobrenome, para que possa
+        comentar.
       </TitleName>
 
       <ContentGetName>
@@ -50,8 +50,8 @@ export const UserName = () => {
           type="text"
         />
         <ValidatorName onClick={handleClick}>
-          {!toggle && <Svgs src={sendLightIcon} alt="Submit" />}
-          {toggle && <Svgs src={sendDarkIcon} alt="Submit" />}
+          {toggle && <Svgs src={sendLightIcon} alt="Submit" />}
+          {!toggle && <Svgs src={sendDarkIcon} alt="Submit" />}
         </ValidatorName>
       </ContentGetName>
     </ContainerUserName>

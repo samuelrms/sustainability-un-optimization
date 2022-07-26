@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
+import { TResponseUsePersistedState } from "../../types";
 
-export const usePersistedState = (key: string, defaultValue: any) => {
+export function usePersistedState<T>(
+  key: string,
+  defaultValue: any,
+): TResponseUsePersistedState<T> {
   const [state, setState] = useState(() => {
     const getLocalTheme = localStorage.getItem(key);
 
@@ -16,4 +20,4 @@ export const usePersistedState = (key: string, defaultValue: any) => {
   }, [key, state]);
 
   return [state, setState];
-};
+}

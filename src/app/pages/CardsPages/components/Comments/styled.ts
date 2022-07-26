@@ -33,6 +33,8 @@ export const DataComment = styled.li`
 export const DataCommentName = styled(DataComment)`
   color: ${({ theme }) => theme.colors.textSecondary};
   text-align: right;
+  font-size: 1.125rem;
+  font-weight: bold;
 `;
 
 export const ContentTextAndSubmit = styled.div`
@@ -44,7 +46,7 @@ export const ContentTextAndSubmit = styled.div`
 
 export const CommentText = styled.input`
   width: 100%;
-  border: 1px solid black;
+  border: 1px solid ${({ theme }) => theme.colors.text};
   margin: 5px;
   border-radius: 10px;
   padding: 10px;
@@ -55,4 +57,8 @@ export const CommentText = styled.input`
 export const Submit = styled.button`
   background: ${({ theme }) => theme.colors.secondary};
   cursor: pointer;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

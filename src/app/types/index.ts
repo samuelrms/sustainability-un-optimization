@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react";
+
 export type TContentCard = {
   id: number;
   title: string;
@@ -20,3 +22,5 @@ export type TCard = {
 export type TContentCardData = {
   data: TContentCard;
 };
+
+export type TResponseUsePersistedState<T> = [T, Dispatch<SetStateAction<T>>];

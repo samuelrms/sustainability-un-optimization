@@ -36,10 +36,10 @@ export const Header = () => {
       <ContentTopHeader>
         <ContentLinksToHome>
           <Link to="/">
-            {!toggle && (
+            {toggle && (
               <Svgs width={30} height={30} src={houseIconSvg} alt="Home" />
             )}
-            {toggle && (
+            {!toggle && (
               <Svgs width={30} height={30} src={houseIconDarkSvg} alt="Home" />
             )}
           </Link>

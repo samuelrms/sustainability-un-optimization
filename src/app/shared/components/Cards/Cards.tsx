@@ -17,6 +17,9 @@ export const Cards = () => {
 
   const handleClick = (card: any) => {
     navigation(`/cards/${card?.id}`, { state: { card } });
+    if (window.scrollY) {
+      window.scroll(0, 0);
+    }
   };
 
   return (
@@ -36,7 +39,7 @@ export const Cards = () => {
                   <NumberContentCard>{data?.id}</NumberContentCard>
                   <TextContentCard>{data?.title}</TextContentCard>
                 </ContentText>
-                {!toggle && (
+                {toggle && (
                   <Svgs
                     width={100}
                     height={100}
@@ -44,7 +47,7 @@ export const Cards = () => {
                     alt={data?.title}
                   />
                 )}
-                {toggle && (
+                {!toggle && (
                   <Svgs
                     width={100}
                     height={100}

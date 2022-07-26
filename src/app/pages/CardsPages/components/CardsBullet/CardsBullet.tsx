@@ -1,14 +1,19 @@
 import { useContext } from "react";
 
 import { useNavigate } from "react-router-dom";
-import { Loading, Svgs, ValueGlobalContext } from "../../../../shared";
+import {
+  ICardsState,
+  Loading,
+  Svgs,
+  ValueGlobalContext,
+} from "../../../../shared";
 import { ContainerCard, ContentCard } from "./styled";
 
 export const CardsBullet = () => {
   const { toggle, loading, response } = useContext(ValueGlobalContext);
   const navigation = useNavigate();
 
-  const handleClick = (card: any) => {
+  const handleClick = (card: ICardsState) => {
     navigation(`/cards/${card.id}`, { state: { card } });
   };
 
@@ -25,7 +30,7 @@ export const CardsBullet = () => {
                 index={index}
                 key={index}
               >
-                {!toggle && (
+                {toggle && (
                   <Svgs
                     width={20}
                     height={20}
@@ -33,7 +38,7 @@ export const CardsBullet = () => {
                     alt={data?.title}
                   />
                 )}
-                {toggle && (
+                {!toggle && (
                   <Svgs
                     width={20}
                     height={20}

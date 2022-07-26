@@ -8,8 +8,8 @@ export const Theme = () => {
 
   return (
     <ContainerTheme onClick={handleToggleTheme}>
-      {toggle && <IconThemes src={iconThemeDark} alt="Theme dark" />}
-      {!toggle && <IconThemes src={iconThemeLight} alt="Theme light" />}
+      {toggle && <IconThemes src={iconThemeLight} alt="Theme light" />}
+      {!toggle && <IconThemes src={iconThemeDark} alt="Theme dark" />}
     </ContainerTheme>
   );
 };

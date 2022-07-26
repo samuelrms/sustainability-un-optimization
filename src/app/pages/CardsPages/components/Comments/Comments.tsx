@@ -80,16 +80,16 @@ export const Comments = () => {
         />
         <UserName />
         <Submit onClick={handleClick}>
-          {!toggle && <Svgs src={sendLightIcon} alt="Submit" />}
-          {toggle && <Svgs src={sendDarkIcon} alt="Submit" />}
+          {toggle && <Svgs src={sendLightIcon} alt="Submit" />}
+          {!toggle && <Svgs src={sendDarkIcon} alt="Submit" />}
         </Submit>
       </ContentTextAndSubmit>
       <CommentsContent>
-        {getCommentsState?.map((data: any) => {
+        {getCommentsState?.map((data: any, index: number) => {
           return (
-            <Comment key={data?.id}>
+            <Comment key={index}>
               <DataComment>{data?.comment}</DataComment>
-              {data?.name && <DataCommentName>{data?.name}</DataCommentName>}
+              <DataCommentName>{data?.name}</DataCommentName>
             </Comment>
           );
         })}

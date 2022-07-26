@@ -9,7 +9,7 @@ export const AssemblyApp = () => {
   const { toggle } = useContext(ValueGlobalContext);
 
   return (
-    <ThemeProvider theme={toggle ? darkTheme : lightTheme}>
+    <ThemeProvider theme={toggle ? lightTheme : darkTheme}>
       <GlobalStyle />
       <AppRoutes />
     </ThemeProvider>

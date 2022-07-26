@@ -34,16 +34,16 @@ export const CardsPages = () => {
       <CardsBullet />
       <WrapCards>
         <ContentCard>
-          <Card index={card.id}>
+          <Card index={card.id - 1}>
             <ContentText>
               <DescriptionCardTitle>
                 Objetivo de Desenvolvimento Sustentável
               </DescriptionCardTitle>
-              <NumberContentCard>{card?.id + 1}</NumberContentCard>
+              <NumberContentCard>{card?.id}</NumberContentCard>
               <TextContentCard>{card?.title}</TextContentCard>
               <ObjectiveContentCard>{card?.objective}</ObjectiveContentCard>
             </ContentText>
-            {!toggle && (
+            {toggle && (
               <Svgs
                 width={250}
                 height={250}
@@ -51,7 +51,7 @@ export const CardsPages = () => {
                 alt={card?.title}
               />
             )}
-            {toggle && (
+            {!toggle && (
               <Svgs
                 width={250}
                 height={250}

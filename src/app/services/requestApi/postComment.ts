@@ -11,11 +11,11 @@ export const postComment = async (
         comment: postCommentsState,
         name: `${userName?.[0]?.toLocaleUpperCase()}${userName?.substring(1)}`,
       })
-      .then(function (response: any) {})
-      .catch(function (error: any) {
-        console.log(error);
+      .then()
+      .catch(function (error) {
+        console.log({ error });
       });
   } catch (err) {
-    console.log(err);
+    console.log({ err });
   }
 };

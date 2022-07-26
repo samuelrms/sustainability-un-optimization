@@ -28,6 +28,12 @@ export const Search = () => {
   const handleClickNavigation = (card: any) => {
     navigation(`/cards/${card.id}`, { state: { card } });
     setSearch("");
+    if (window.scrollY) {
+      window.scroll(0, 0);
+    }
+    if (search?.length === 0) {
+      setSearchDropdown(!searchDropdown);
+    }
   };
 
   const searchRef = useRef(null);
@@ -44,17 +50,13 @@ export const Search = () => {
         onClick={() => setSearchDropdown(!searchDropdown)}
       />
       <SearchButton>
-        {toggle && <Svgs src={searchIconDark} alt="search icon dark" />}
-        {!toggle && <Svgs src={searchIconLight} alt="search icon light" />}
+        {toggle && <Svgs src={searchIconLight} alt="search icon light" />}
+        {!toggle && <Svgs src={searchIconDark} alt="search icon dark" />}
       </SearchButton>
       {searchDropdown && (
-        <ContentSearch>
+        <ContentSearch ref={searchRef}>
           {filterResponse?.map((data, index) => (
-            <ListSearch
-              ref={searchRef}
-              onClick={() => handleClickNavigation(data)}
-              key={index}
-            >
+            <ListSearch onClick={() => handleClickNavigation(data)} key={index}>
               {data.title}
             </ListSearch>
           ))}

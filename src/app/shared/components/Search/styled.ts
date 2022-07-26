@@ -50,6 +50,6 @@ export const ListSearch = styled.li`
   cursor: pointer;
 
   :hover {
-    color: ${({ theme }) => theme.colors.textGray};
+    color: ${({ theme }) => theme.colors.textCard};
   }
 `;

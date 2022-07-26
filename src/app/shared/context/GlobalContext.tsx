@@ -9,14 +9,13 @@ export const ValueGlobalContext = createContext<IGlobalContextProps>(
 );
 
 export const GlobalContext = ({ children }: IGlobalContext) => {
-  const [toggle, setToggle] = usePersistedState("Theme", lightTheme);
-  const [response, setResponse] = useState<ICardsState[]>();
-  const [loading, setLoading] = useState<boolean>();
-  const [getCommentsState, setGetCommentsState] = useState<string[]>();
+  const [toggle, setToggle] = usePersistedState<boolean>("Theme", lightTheme);
+  const [userName, setUserName] = usePersistedState<string>("Name", null);
   const [postCommentsState, setPostCommentsState] = useState<string>();
-  const [userName, setUserName] = useState<string>("");
+  const [getCommentsState, setGetCommentsState] = useState<string[]>();
+  const [response, setResponse] = useState<ICardsState[]>();
   const [isName, setIsName] = useState<boolean>(false);
-  // usePersistedState
+  const [loading, setLoading] = useState<boolean>();
 
   useEffect(() => {
     getCard(setResponse, setLoading);
@@ -25,21 +24,6 @@ export const GlobalContext = ({ children }: IGlobalContext) => {
   const handleToggleTheme = () => {
     setToggle(!toggle);
   };
-
-  useEffect(() => {
-    const saveLocalStorageName = JSON.stringify(userName);
-    Boolean(userName?.trim().length) &&
-      window?.localStorage?.setItem("Name", saveLocalStorageName);
-  }, [userName]);
-
-  useEffect(() => {
-    const getLocalStorageName = window.localStorage.getItem("Name");
-    if (getLocalStorageName !== null && !userName?.trim().length) {
-      const localName = JSON.parse(getLocalStorageName);
-      setUserName(localName);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   const themeContextToggleAndState: IGlobalContextProps = {
     getComment: (id: number) => getComment(id, setGetCommentsState),
