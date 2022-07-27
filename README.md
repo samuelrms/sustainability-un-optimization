@@ -26,18 +26,6 @@
   
   ### https://desafio-final-mod-3.herokuapp.com/
   
-  ### Ainda estou estudando para construir
-  
-</details>
-
-<details>
-
-  <summary>
-    
-   # Blog Pessoal
-  
-  </summary>
-  
-  ### Estou trabalhando na construção
+  ### Projeto para desktop finalizado!
   
 </details>
