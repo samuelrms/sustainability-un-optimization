@@ -26,16 +26,17 @@
   
   ### https://desafio-final-mod-3.herokuapp.com/
   
-  
-    <summary>
+<summary>
     
-  ### Projeto para desktop finalizado!
+  ## Projeto para desktop finalizado!
   
-  </summary>
+</summary>
+  
   
   ![image](https://user-images.githubusercontent.com/92615688/181627139-0011af51-cc01-4b6a-b3d0-f5fd610955cc.png)
 ![image](https://user-images.githubusercontent.com/92615688/181627190-796aaefd-217a-4ddf-9701-5b5e9154b8a5.png)
-
+  
+   
 
   
-</details>
+  </details>
