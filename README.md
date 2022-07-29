@@ -4,6 +4,14 @@
 
 ## Projeto em fase de estruturação e criação de ideias
 
+## Projeto com Theme, integração de comentários salvos em uma API criada apenas para ele, para comentar é necessario colocar seu nome e futuramente será implementado sistema de login para poder comentar e fazer publicações.
+
+### Theme -> Salvo no localStorage e compartilhado com useContext
+
+### UserName -> Salvo no localStorage e compartilhado com useContext, futuramente será salvo na API.
+
+### Comentários -> Salvos na API
+
 <details>
 
   <summary>
