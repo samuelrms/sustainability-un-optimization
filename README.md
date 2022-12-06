@@ -56,6 +56,8 @@ Para utilizar a API não se esqueça de instalar a extensão de CORS e a ativar,
   
   </summary>
   
+  ### Para acessar a página é necessário ativar o CORS em seu navegador
+  
   ### https://sustainability-un-optimization-patbt.ondigitalocean.app/
   
 <summary>
