@@ -12,6 +12,32 @@
 
 ### Comentários -> Salvos na API
 
+## Rodando o projeto
+```
+yarn
+```
+**Para instalar as dependências do projeto.**
+
+<br>
+
+
+```
+yarn start
+```
+**Para rodar o projeto em modo de desenvolvimento.**
+
+<br>
+
+```
+yarn build
+```
+**Para fazer o build do projeto para produção.**
+
+---
+Para utilizar a API não se esqueça de instalar a extensão de CORS e a ativar, se não funcionar favor entrar em contato comigo através de um dos links do meu perfil 😄  
+
+---
+
 <details>
 
   <summary>
